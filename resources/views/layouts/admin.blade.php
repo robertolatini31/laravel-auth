@@ -50,6 +50,7 @@
                                 </li>
                             @endif
                         @else
+                        <a class="nav-link fs-4 btn btn-success text-white" href="{{route('admin.posts.create')}}">Add Post</a>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
