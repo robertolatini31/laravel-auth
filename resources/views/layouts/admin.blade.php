@@ -20,6 +20,6 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
-    
+    hello
 </body>
 </html>
