@@ -5,7 +5,7 @@
 <div class="container py-5">
   <h3>Stai modificando: {{$post->title}}</h3>
 @include('partials.error')
-<form action="{{route('admin.posts.update', $post->id)}}" method="post">
+<form action="{{route('admin.posts.update', $post->slug)}}" method="post">
     @csrf
     @method('PUT')
   <div class="mb-3">
