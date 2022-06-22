@@ -66,7 +66,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -76,9 +76,15 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $validated_data = $request->validated();
+        //dd($validated_data);
+        $slug = Str::slug($request->title, '-');
+        $validated_data['slug'] = $slug;
+        $post->update($validated_data);
+
+        return redirect()->route('admin.posts.index')->with('message', 'Post Edited Successfully');
     }
 
     /**

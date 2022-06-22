@@ -4,8 +4,9 @@
 
 <div class="container py-5">
 @include('partials.error')
-<form action="{{route('admin.posts.store')}}" method="post">
+<form action="{{route('admin.posts.update', $post->id)}}" method="post">
     @csrf
+    @method('PUT')
   <div class="mb-3">
     <label for="title" class="form-label">Titolo</label>
     <input type="title" class="form-control @error('title') is-invalid @enderror" name="title" id="title" aria-describedby="titlehelp" value="{{old('title')}}">
@@ -23,7 +24,7 @@
     <input type="text" class="form-control" name="img" id="img" aria-describedby="imghelp" value="{{old('img')}}">
     <div id="imghelp" class="form-text">Inserire Immagine del post</div>
   </div>
-  <button type="submit" class="btn btn-primary">Aggiungi</button>
+  <button type="submit" class="btn btn-primary">Modifica</button>
 </form>
 </div>
 
