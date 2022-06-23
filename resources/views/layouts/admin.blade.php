@@ -38,6 +38,9 @@
                 @csrf
              </form>
             </li>
+            <li>
+                <a class="btn btn-success" href="{{route('admin.posts.create')}}">Create Post</a>
+            </li>
             @endguest
         </ul>
     </nav>
